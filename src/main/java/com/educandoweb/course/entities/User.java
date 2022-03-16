@@ -2,19 +2,27 @@ package com.educandoweb.course.entities;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
-	private Integer phone;
+	private String phone;
 	private String password;
 	
 	public User() {
 	}
 
-	public User(Long id, String name, String email, Integer phone, String password) {
+	public User(Long id, String name, String email, String phone, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -47,11 +55,11 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
-	public Integer getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(Integer phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -87,5 +95,4 @@ public class User implements Serializable{
 			return false;
 		return true;
 	}
-	
 }
