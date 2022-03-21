@@ -15,8 +15,7 @@ import com.educandoweb.course.services.exceptions.ResourceNotFoundException;
 @ControllerAdvice // intercepta as exceções que ocorre e executar o tratamento
 public class ResourceExceptionHandler {
 
-	@ExceptionHandler(ResourceNotFoundException.class) // essa annotation informa qual exceção vai ser interceptada e
-														// tratada
+	@ExceptionHandler(ResourceNotFoundException.class) // essa annotation informa qual exceção vai ser interceptada e tratada
 	public ResponseEntity<StandardError> resourceNotFound(ResourceNotFoundException e, HttpServletRequest request) {
 		String error = "Resource not found";
 		HttpStatus status = HttpStatus.NOT_FOUND;
