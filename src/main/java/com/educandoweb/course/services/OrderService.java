@@ -11,11 +11,11 @@ import com.educandoweb.course.repositories.OrderRepository;
 
 @Service
 public class OrderService {
-	
+
 	@Autowired
 	private OrderRepository repository;
 	
-	public List<Order> findAll(){
+	public List<Order> findAll() {
 		return repository.findAll();
 	}
 	

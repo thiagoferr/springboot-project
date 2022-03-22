@@ -11,11 +11,11 @@ import com.educandoweb.course.repositories.ProductRepository;
 
 @Service
 public class ProductService {
-	
+
 	@Autowired
 	private ProductRepository repository;
 	
-	public List<Product> findAll(){
+	public List<Product> findAll() {
 		return repository.findAll();
 	}
 	
